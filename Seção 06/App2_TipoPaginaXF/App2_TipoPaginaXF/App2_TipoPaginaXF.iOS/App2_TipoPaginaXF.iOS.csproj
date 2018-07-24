@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{986ECEE3-557F-4A34-8F03-83843F1C936C}</ProjectGuid>
+    <ProjectGuid>{AD668A38-F8E7-4BEB-9F98-307AD953BF34}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
@@ -152,7 +152,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\App2_TipoPaginaXF\App2_TipoPaginaXF.csproj">
-      <Project>{11D632AA-4710-4730-8576-331FBEF1F6DD}</Project>
+      <Project>{21783C66-005D-46C7-9022-30994A8BD544}</Project>
       <Name>App2_TipoPaginaXF</Name>
     </ProjectReference>
   </ItemGroup>

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C5BF09B-5ECB-4EB8-843A-5D5007E755D8}</ProjectGuid>
+    <ProjectGuid>{6904E89C-CB6A-4467-AE83-EBD832E1283D}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App2_TipoPaginaXF\App2_TipoPaginaXF.csproj">
-      <Project>{11D632AA-4710-4730-8576-331FBEF1F6DD}</Project>
+      <Project>{21783C66-005D-46C7-9022-30994A8BD544}</Project>
       <Name>App2_TipoPaginaXF</Name>
     </ProjectReference>
   </ItemGroup>
