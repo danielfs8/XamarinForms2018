@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_ControleXF.Controles.EntryEditorPage">
+    <ContentPage.Content>
+        <StackLayout Margin="30">
+            <Entry x:Name="txtEmail"
+                   Placeholder="Digite seu e-mail!" />
+            <StackLayout Orientation="Horizontal" >
+                <Entry x:Name="txtSenha"
+                       Placeholder="Digite sua Senha!"
+                       IsPassword="True"   
+                       Keyboard="Numeric"
+                       />
+
+                <Button Text="Olho" Clicked="Ver"/>
+            </StackLayout>
+            <Label x:Name="lbl_Duplicado"/>
+            <Label x:Name="lbl_ContaSenha"/>
+
+            <Editor x:Name="txt_Mensagem" HeightRequest="100"/>
+            <Label x:Name="lbl_ContaCaracteres" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

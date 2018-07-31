@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App02_Xamarin.Pages.Xamarin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+                <StackLayout Padding="30" BackgroundColor="#FFC926">
+                    <Image Source="Logo.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                </StackLayout>
+                <StackLayout Padding="20" BackgroundColor="#0D1F2D" HeightRequest="30">
+                    <Label Text="Xamarin" FontSize="18" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <RelativeLayout HorizontalOptions="FillAndExpand" WidthRequest="5">
+                        <BoxView x:Name="boxOne" Margin="8" HeightRequest="30" WidthRequest="30" BackgroundColor="#0D1F2D"  />
+                        <BoxView x:Name="boxTwo" HeightRequest="30" WidthRequest="30" BackgroundColor="#25567E"  
+                                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=boxOne, Property=X, Factor=1,Constant=12}"
+                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=boxOne, Property=Y, Factor=1,Constant=12}"
+                                 />
+                        <BoxView HeightRequest="30" WidthRequest="30" BackgroundColor="#4E93CB"  
+                                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=boxTwo, Property=X, Factor=1,Constant=12}"
+                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=boxTwo, Property=Y, Factor=1,Constant=12}"
+                                 />
+                        
+                    </RelativeLayout>
+                    
+                    <Label Text="Empresa" TextColor="#0D1F2D" HorizontalOptions="StartAndExpand" VerticalOptions="Center" HorizontalTextAlignment="Start"/>
+                </StackLayout>
+
+                <StackLayout Margin="20">
+                    <Label Text="Coprado pela Microsoft em 2016.&#10;Desenvolve tecnologia multiplataforma que funcionam principalmente em Android, IOS e UWP"
+                           TextColor="#0D1F2D" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
