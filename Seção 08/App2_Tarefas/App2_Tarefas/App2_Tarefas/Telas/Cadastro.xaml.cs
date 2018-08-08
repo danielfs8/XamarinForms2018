@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using App2_Tarefas.Modelos;
 
 namespace App2_Tarefas.Telas
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Cadastro : ContentPage
 	{
+        private byte Prioridade { get; set; }
+
 		public Cadastro ()
 		{
 			InitializeComponent ();
@@ -28,7 +31,8 @@ namespace App2_Tarefas.Telas
             ((Label)((StackLayout)sender).Children[1]).TextColor = Color.Black;
             FileImageSource Source = ((Image)((StackLayout)sender).Children[0]).Source as FileImageSource;
             string Prioridade = Source.File.ToString().Replace(".png", "").Replace("p", "");
-            var PrioridadeSelecionada = byte.Parse(Prioridade);
+           
+            this.Prioridade = byte.Parse(Prioridade);
         }
 
         public void SalvarAction(object sender, EventArgs args)
@@ -40,10 +44,20 @@ namespace App2_Tarefas.Telas
                 DisplayAlert("Erro", "Descrição não preechida!", "OK");
             }
             
-            if (!(PrioridadeSelecionada > 0))
+            if (!(this.Prioridade > 0))
             {
                 ErroExiste = true;
                 DisplayAlert("Erro", "Prioridade não Selecionada!", "OK");
+            }
+            if (ErroExiste == false)
+            {
+                //Salva tarefa
+                Tarefa tarefa = new Tarefa();
+                tarefa.Nome = TxtNome.Text.Trim();
+                tarefa.Prioridade = this.Prioridade;
+
+                new GerenciadorTarefa().Salvar(tarefa);
+                App.Current.MainPage = new NavigationPage(new Inicio());
             }
         }
 

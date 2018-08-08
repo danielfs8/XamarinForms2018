@@ -5,10 +5,11 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <StackLayout BackgroundColor="Blue" HeightRequest="250">
+            <StackLayout BackgroundColor="Blue" HeightRequest="100">
                 <Label Text="Meu Dia" TextColor="White" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Label Text="Quinta, 04/08" TextColor="White" HorizontalOptions="Start" VerticalOptions="End"/>
+                <Label Text="Quinta, 04/08" x:Name="DataHoje" TextColor="White" HorizontalOptions="Start" VerticalOptions="End"/>
             </StackLayout>
+            <ScrollView>
             <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10">
                 <StackLayout Orientation="Horizontal" Spacing="15">
                     <Image VerticalOptions="Center">
@@ -70,6 +71,7 @@
                     </Image>
                 </StackLayout>
             </StackLayout>
+            </ScrollView>
             <Button HorizontalOptions="Center" BackgroundColor="Transparent" Clicked="ActionGoCadastro" >
                 <Button.Image>
                     <OnPlatform x:TypeArguments="FileImageSource">
