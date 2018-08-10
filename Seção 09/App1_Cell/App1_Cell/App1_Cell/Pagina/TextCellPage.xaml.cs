@@ -23,6 +23,8 @@ namespace App1_Cell.Pagina
             Lista.Add(new Funcionario() { Nome = "Tassi", Cargo = "Admin" });
             Lista.Add(new Funcionario() { Nome = "Daniel", Cargo = "Developer" });
             Lista.Add(new Funcionario() { Nome = "Elaine", Cargo = "Gestora" });
+
+            ListaFuncionario.ItemsSource = Lista;
         }
 	}
 }

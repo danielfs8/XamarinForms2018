@@ -8,7 +8,7 @@ namespace App1_Cell.Modelo
     {
         public string Nome { get; set; }
         public string Cargo { get; set; }
-        public string Image { get; set; }
+        public string Foto { get; set; }
 
 
     }

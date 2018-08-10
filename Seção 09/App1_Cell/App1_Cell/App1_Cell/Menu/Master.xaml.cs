@@ -19,6 +19,19 @@ namespace App1_Cell.Menu
         private void GoPagina1(object sender, EventArgs args)
         {
             Detail = new NavigationPage(new Pagina.TextCellPage());
+            IsPresented = false;
+        }
+         private void GoPagina2(object sender, EventArgs args)
+        {
+            Detail = new NavigationPage(new Pagina.ImageCellPage());
+            IsPresented = false;
+
+        }
+         private void GoPagina3(object sender, EventArgs args)
+        {
+            Detail = new NavigationPage(new Pagina.EntryCellPage());
+            IsPresented = false;
+
         }
 
     }

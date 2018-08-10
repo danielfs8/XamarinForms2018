@@ -8,7 +8,11 @@
     <MasterDetailPage.Master>
         
         <ContentPage Title="Menu">
-            <Button Text="TextCellPage" Clicked="GoPagina1"/>
+            <StackLayout>
+                <Button Text="TextCellPage" Clicked="GoPagina1"/>
+                <Button Text="ImageCell" Clicked="GoPagina2"/>
+                <Button Text="EntryCell" Clicked="GoPagina3"/>
+            </StackLayout>
         </ContentPage>
         
     </MasterDetailPage.Master>
