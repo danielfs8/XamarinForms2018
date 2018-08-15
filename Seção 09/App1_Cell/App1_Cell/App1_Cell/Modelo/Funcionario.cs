@@ -4,7 +4,7 @@ using System.Text;
 
 namespace App1_Cell.Modelo
 {
-    class Funcionario
+    public class Funcionario
     {
         public string Nome { get; set; }
         public string Cargo { get; set; }

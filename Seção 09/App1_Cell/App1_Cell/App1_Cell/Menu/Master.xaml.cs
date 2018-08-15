@@ -33,6 +33,30 @@ namespace App1_Cell.Menu
             IsPresented = false;
 
         }
+        private void GoPagina4(object sender, EventArgs args)
+        {
+            Detail = new NavigationPage(new Pagina.SwitchCellPage());
+            IsPresented = false;
+
+        }
+        private void GoPagina5(object sender, EventArgs args)
+        {
+            Detail = new NavigationPage(new Pagina.ViewCellPage());
+            IsPresented = false;
+
+        }
+        private void GoPagina6(object sender, EventArgs args)
+        {
+            Detail = new NavigationPage(new Pagina.ListViewPage());
+            IsPresented = false;
+
+        }
+        private void GoPagina7(object sender, EventArgs args)
+        {
+            Detail = new NavigationPage(new Pagina.ListViewButtonPage());
+            IsPresented = false;
+
+        }
 
     }
 }

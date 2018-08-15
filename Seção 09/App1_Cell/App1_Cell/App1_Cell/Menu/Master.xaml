@@ -9,9 +9,17 @@
         
         <ContentPage Title="Menu">
             <StackLayout>
-                <Button Text="TextCellPage" Clicked="GoPagina1"/>
+                <Label Text="Celulas" FontAttributes="Bold"/>
+                <Button Text="TextCell" Clicked="GoPagina1"/>
                 <Button Text="ImageCell" Clicked="GoPagina2"/>
                 <Button Text="EntryCell" Clicked="GoPagina3"/>
+                <Button Text="SwitchCell" Clicked="GoPagina4"/>
+                <Button Text="ViewCell" Clicked="GoPagina5"/>
+
+                
+                <Label Text="Componentes" FontAttributes="Bold"/>
+                <Button Text="ListView" Clicked="GoPagina6"/>
+                <Button Text="ListViewButton" Clicked="GoPagina7"/>
             </StackLayout>
         </ContentPage>
         

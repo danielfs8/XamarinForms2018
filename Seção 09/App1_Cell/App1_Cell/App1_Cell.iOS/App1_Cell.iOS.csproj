@@ -156,4 +156,7 @@
       <Name>App1_Cell</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Kratos.png" />
+  </ItemGroup>
 </Project>
