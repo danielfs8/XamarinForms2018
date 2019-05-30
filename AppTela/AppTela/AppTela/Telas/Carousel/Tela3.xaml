@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppTela.Telas.Tipos.Tela3"
+             BackgroundColor="LightGoldenrodYellow">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label Text="Eu sou a Tela 3!!" TextColor="BlueViolet"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Button Image="play.png" 
+                 Clicked="MudarPagina"
+                 HorizontalOptions="Center" 
+                 BackgroundColor="Transparent"
+                   />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
