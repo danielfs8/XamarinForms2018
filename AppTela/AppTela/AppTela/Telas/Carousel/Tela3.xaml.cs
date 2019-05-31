@@ -19,7 +19,8 @@ namespace AppTela.Telas.Tipos
 
         private void MudarPagina(object sender, EventArgs args)
         {
-            App.Current.MainPage = new NavigationPage(new Navigation.Pagina1()) {BarBackgroundColor = Color.Azure};
+            // App.Current.MainPage = new NavigationPage(new Navigation.Pagina1()) {BarBackgroundColor = Color.Azure};
+            App.Current.MainPage = new NavigationPage(new Tabbed.Abas() { Title = "Item 1" });
         }
     }
 }

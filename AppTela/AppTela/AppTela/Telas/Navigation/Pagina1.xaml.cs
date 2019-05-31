@@ -25,5 +25,14 @@ namespace AppTela.Telas.Navigation
         {
             Navigation.PushModalAsync(new Modal());
         }
+        private void ChamarModal2 (object sender, EventArgs args)
+        {
+            Navigation.PushModalAsync(new Modal2());
+        }
+        private void ChamarMaster(object sender, EventArgs args)
+        {
+            App.Current.MainPage = new Master.Master();
+ 
+        }
     }
 }

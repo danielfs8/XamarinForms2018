@@ -4,6 +4,7 @@ using System.Text;
 using SQLite;
 using App1_Vagas.Modelos;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace App1_Vagas.Banco
 {
@@ -16,28 +17,31 @@ namespace App1_Vagas.Banco
             var dep = DependencyService.Get<ICaminho>();
             string caminho = dep.ObterCaminnho("database.sqlite");
             _conexao = new SQLiteConnection(caminho);
+            _conexao.CreateTable<Vaga>();
+
         }
-        /*
+        
         public List<Vaga> Consultar()
         {
-            return (List<Vaga>)null;
+            return _conexao.Table<Vaga>().ToList();
         }
-        public Vaga ObterVagaPorID()
+      public Vaga ObterVagaPorID(int id)
         {
-            return null;
+            return _conexao.Table<Vaga>().Where(a => a.Id == id).FirstOrDefault();
         }
-
+  
         public void Cadastro(Vaga vaga)
         {
-            return null;
+             _conexao.Insert(vaga);
         }
         public void Exclusao( Vaga vaga)
         {
-            return null;
+            _conexao.Delete(vaga);
+           
         }
         public void Atualizacao(Vaga vaga)
         {
-            return null;
-        } */
+            _conexao.Update(vaga);
+        } 
     }   
  }

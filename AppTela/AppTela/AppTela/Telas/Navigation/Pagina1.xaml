@@ -22,7 +22,9 @@
 
             <Button Text="Ir para Página2" Clicked="MudarParaPagina2"/>
             <Button Text="Chamar Modal" Clicked="ChamarModal"/>
-            
+            <Button Text="Chamar Modal2" Clicked="ChamarModal2"/>
+            <Button Text="Chamar Master" Clicked="ChamarMaster"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
