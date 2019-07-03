@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RedeSocialEmpresa.Paginas.Perfil2">
+    <ContentPage.Content>
+        <StackLayout Spacing="0" >
+            <StackLayout BackgroundColor="#FFC926" HeightRequest="300" >
+                 <Image Source="Logo.png" WidthRequest="200" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+            
+            <StackLayout BackgroundColor="#0D1F2D" Padding="30" Spacing="30">
+                <Label Text="Perfil" TextColor="White" FontSize="36" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="20" >
+                <StackLayout  HorizontalOptions="FillAndExpand" >
+                    <RelativeLayout>
+                        <BoxView BackgroundColor="Yellow" x:Name="box1" HeightRequest="30" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0.5}" />
+                        <BoxView BackgroundColor="Green" HeightRequest="30"
+                                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=box2, Property=X, Factor=1,Constant=20}"
+                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=box2, Property=Y, Factor=1,Constant=20}"
+                                 />
+                        <BoxView BackgroundColor="Red" HeightRequest="30"
+                                 x:Name="box2"
+                                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=box1, Property=X, Factor=1,Constant=20}"
+                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=box1, Property=Y, Factor=1,Constant=20}"
+                                 />
+                       
+
+                        <BoxView BackgroundColor="Yellow" HeightRequest="30" />
+                    </RelativeLayout>
+                </StackLayout>
+                <StackLayout Padding="30"  HorizontalOptions="FillAndExpand">
+                    <Label Text="Tassiana Schneider" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <StackLayout Padding="30"  HorizontalOptions="FillAndExpand">
+                    <Label Text="Ele começou a escrever software em 1992.
+
+Icaza começou o projeto GNOME em Agosto de 1997. Ele e Federico Mena, criaram um completo sistema de desktop livre e um componente para sistemas GNU/Linux. Antes disso, Icaza já havia trabalhado em um gerente de arquivos, o Midnight Commander, assim como no núcleo Linux."  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

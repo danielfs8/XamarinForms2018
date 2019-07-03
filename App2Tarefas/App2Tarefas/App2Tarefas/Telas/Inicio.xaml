@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2Tarefas.Telas.Inicio">
+    <ContentPage.Content>
+         
+        <StackLayout>
+            <StackLayout BackgroundColor="Green" HeightRequest="250">
+                <Label Text="Meu Dia"  
+                       TextColor="White" 
+                       FontSize="28" 
+                       HorizontalOptions="CenterAndExpand" 
+                       VerticalOptions="CenterAndExpand"
+                      />
+                
+                
+               <Label Text="Quarta, 03/07/2019" 
+                       TextColor="White" 
+                       FontSize="12" 
+                       HorizontalOptions="Start"
+                       VerticalOptions="End"
+                      /> 
+
+            </StackLayout>
+            
+            <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10" >
+                <StackLayout Orientation="Horizontal" Spacing="15">
+                    <Image VerticalOptions="Center"/>
+                    <Label Text="Tarefa 1" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    <Image VerticalOptions="Center"/> 
+                    <Image VerticalOptions="Center"/>
+                
+                </StackLayout>
+            
+            
+                <StackLayout Orientation="Horizontal" Spacing="15">
+                    <Image HorizontalOptions="Center"/>
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="0">
+                        <Image HorizontalOptions="Center"/>
+                        <Label Text="Tarefa 2" TextColor="Gray"  />
+                        <Label Text="Finalizado em 03/07/2019" FontSize="10" TextColor="Gray" />
+                    </StackLayout>
+                    <Image HorizontalOptions="Center"/>
+                    <Image HorizontalOptions="Center"/>
+                </StackLayout>
+
+            </StackLayout>
+            <Button Text="Adicionar" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+    
+    
+    <!-- Estou no no EP. 91-->
