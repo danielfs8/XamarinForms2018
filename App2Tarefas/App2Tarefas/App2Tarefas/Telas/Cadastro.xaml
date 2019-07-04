@@ -3,10 +3,86 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App2Tarefas.Telas.Cadastro">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+         <StackLayout >
+            <StackLayout BackgroundColor="Green" HeightRequest="250">
+                   
+                <Label Text="Meu Dia"  
+                    TextColor="White" 
+                    FontSize="28" 
+                    HorizontalOptions="CenterAndExpand" 
+                    VerticalOptions="CenterAndExpand"
+                    />
+
+
+                <Label Text="Quarta, 03/07/2019" 
+                    TextColor="White" 
+                    FontSize="12" 
+                    HorizontalOptions="Start"
+                    VerticalOptions="End"
+                    />
+
+          </StackLayout>
+
+            <StackLayout Padding="20">
+                <Label Text="Nome:"/>
+                <Entry x:Name="TxtNome"/>
+                <Label Text="Prioridade"/>
+                
+            </StackLayout>
+            <StackLayout x:Name="SLPrioridades" Padding="20">
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="p4.png"/>
+                                <On Platform="UWP" Value="Resources/p4.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                        
+                    </Image>
+                    <Label Text="Urgente e Importante" HorizontalOptions="FillAndExpand"/>
+                </StackLayout >
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="p3.png"/>
+                                <On Platform="UWP" Value="Resources/p3.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+
+                    </Image>
+                    <Label Text="Urgente e não Importante" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="p2.png"/>
+                                <On Platform="UWP" Value="Resources/p2.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+
+                    </Image>
+                    <Label Text="Não urgente e Importante" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="p1.png"/>
+                                <On Platform="UWP" Value="Resources/p1.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+
+                    </Image>
+                    <Label Text="Não urgente e não Importante" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                
+            </StackLayout>
+             
+            <Button Text="OK" BackgroundColor="Blue" TextColor="Wheat" HorizontalOptions="End" />
+             
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

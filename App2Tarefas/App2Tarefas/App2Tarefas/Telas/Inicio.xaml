@@ -25,27 +25,81 @@
             
             <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10" >
                 <StackLayout Orientation="Horizontal" Spacing="15">
-                    <Image VerticalOptions="Center"/>
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="CheckOff.png"/>
+                                <On Platform="UWP" Value="Resources/CheckOff.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+
+                    </Image>
                     <Label Text="Tarefa 1" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
-                    <Image VerticalOptions="Center"/> 
-                    <Image VerticalOptions="Center"/>
-                
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="p4.png"/>
+                                <On Platform="UWP" Value="Resources/p4.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+
+                    </Image>
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="Delete.png"/>
+                                <On Platform="UWP" Value="Resources/Delete.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+
+                    </Image>
+
                 </StackLayout>
             
             
                 <StackLayout Orientation="Horizontal" Spacing="15">
-                    <Image HorizontalOptions="Center"/>
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="CheckOn.png"/>
+                                <On Platform="UWP" Value="Resources/CheckOn.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+
+                    </Image>
                     <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="0">
-                        <Image HorizontalOptions="Center"/>
                         <Label Text="Tarefa 2" TextColor="Gray"  />
                         <Label Text="Finalizado em 03/07/2019" FontSize="10" TextColor="Gray" />
                     </StackLayout>
-                    <Image HorizontalOptions="Center"/>
-                    <Image HorizontalOptions="Center"/>
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="p2.png"/>
+                                <On Platform="UWP" Value="Resources/p2.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+
+                    </Image>
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments ="ImageSource">
+                                <On Platform="Android, ios" Value="Delete.png"/>
+                                <On Platform="UWP" Value="Resources/Delete.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+
+                    </Image>
                 </StackLayout>
 
             </StackLayout>
-            <Button Text="Adicionar" HorizontalOptions="Center"/>
+            <Button HorizontalOptions="Center" BackgroundColor="Transparent" Clicked="ActionGoCadastro">
+                <Button.Image>
+                    <OnPlatform x:TypeArguments ="FileImageSource">
+                        <On Platform="Android, ios" Value="AddBotao.png"/>
+                        <On Platform="UWP" Value="Resources/AddBotao.png"/>
+                    </OnPlatform>
+                </Button.Image>
+            </Button>  
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
@@ -53,4 +107,4 @@
     
     
     
-    <!-- Estou no no EP. 91-->
+    <!-- Estou no no EP. 94-->
