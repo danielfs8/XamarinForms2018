@@ -4,7 +4,7 @@
              x:Class="App2Tarefas.Telas.Cadastro">
     <ContentPage.Content>
          <StackLayout >
-            <StackLayout BackgroundColor="Green" HeightRequest="250">
+            <StackLayout BackgroundColor="#2196F3" HeightRequest="250">
                    
                 <Label Text="Meu Dia"  
                     TextColor="White" 

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using App2Tarefas.Modelos;
+using System.Globalization;
 
 namespace App2Tarefas.Telas
 {
@@ -16,7 +17,11 @@ namespace App2Tarefas.Telas
 		public Inicio ()
 		{
 			InitializeComponent ();
-            DataHoje.Text = DateTime.Now.DayOfWeek.ToString() + ", " + DateTime.Now.ToString("dd/MM");
+
+            CultureInfo culture = new CultureInfo("pt-BR");
+            string Data = DateTime.Now.ToString("dddd, dd {0} MMMM {0} yyyy", culture);
+
+            DataHoje.Text = string.Format(Data, "de");
 
             CarregarTarefas();
 
