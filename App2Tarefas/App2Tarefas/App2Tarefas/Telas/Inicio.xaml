@@ -14,7 +14,7 @@
                       />
                 
                 
-               <Label Text="Quarta, 03/07/2019" 
+               <Label Text="" x:Name="DataHoje"
                        TextColor="White" 
                        FontSize="12" 
                        HorizontalOptions="Start"
