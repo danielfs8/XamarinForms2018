@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_Cell.Pagina.ViewCellPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView  x:Name="ListaFuncionario" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Image Source="homen1P.jpg"/>
+                                <Label Text="{Binding Nome}" TextColor="Coral" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                <Label Text=" - " VerticalOptions="Center"/>
+                                <Label Text="{Binding Cargo}" TextColor="Red" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Cadastro">
+                        <ViewCell>
+                            <StackLayout Padding="20">
+                                <Label Text="Digite sua Mensagem:"/>
+                                <Editor HorizontalOptions="FillAndExpand" HeightRequest="200"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
