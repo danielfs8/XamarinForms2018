@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_Estilo.Pagina.InheritdStylePage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="XStyleView" TargetType="View">
+                <Setter Property="BackgroundColor" Value="Yellow"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="StyleLbl" TargetType="Label" BasedOn="XStyleView">
+                <Setter Property="TextColor" Value="DarkOrange"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="StyleBtn" TargetType="Button" BasedOn="XStyleView">
+                <Setter Property="TextColor" Value="DeepSkyBlue"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+            </Style>
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Herança de Estilos" Style="{StaticResource StyleLbl}"/>
+            <Label Text="Herança de Estilos" />
+            <Label Text="Herança de Estilos" />
+            <Button Text="Calcular" Style="{StaticResource StyleBtn}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
