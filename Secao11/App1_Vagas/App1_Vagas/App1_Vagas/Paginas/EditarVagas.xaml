@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1_Vagas.Paginas.CadastroVagas">
+             x:Class="App1_Vagas.Paginas.EditarVagas">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -12,7 +12,7 @@
                 <Entry x:Name="ValorSalario" Placeholder="Salário"/>
                 <Label x:Name="NomeCargo" Text="Descrição do Cargo"/>
                 <Editor x:Name="EditorMSG" HeightRequest="200"/>
-            
+
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Tipo de Contratação"/>
                     <Label Text="CLT"/>

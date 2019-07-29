@@ -4,9 +4,58 @@
              x:Class="App1_Vagas.Paginas.MinhasVagasCadastradas">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+                <StackLayout Orientation="Horizontal" >
+                <Label Text="Vagas" FontSize="24" FontAttributes="Bold" TextColor="#F24333" VerticalOptions="End" HorizontalOptions="Start" />
+                <Label Text="encontre seu emprego aqui" FontSize="10" TextColor="#F8A199" VerticalOptions="End" HorizontalOptions="StartAndExpand"/>
+                <Button Text="Add" HorizontalOptions="End" BackgroundColor="#F24333" TextColor="White" Clicked="AddVaga"/>
+
+            </StackLayout>
+           <!-- <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Adicionar" Clicked="GoCadastroAction" />
+                <Button Text="Minhas Vagas" Clicked="GoMinhasVagasAction" />
+            </StackLayout>-->
+            <Entry  Placeholder="Pesquisar" TextChanged="PesquisaVaga"/>
+            <Label x:Name="lblCount"/>
+            <ListView x:Name="ListaVagas" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                    <StackLayout  Grid.Column="0"  Margin="0,0,0,2">
+                                        <Label Text="{Binding NomeVaga}" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Empresa}"/>
+                                        <Label Text="{Binding Cidade}"/>
+                                        
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="1" Orientation="Horizontal"  >
+                                        <Label Text="Editar" TextColor="#F24333" >
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="EditarAction" CommandParameter="{Binding .}"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Label Text="|" TextColor="#F24333" />
+                                        <Label Text="Excluir"  TextColor="#F24333" >
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ExcluirAction" CommandParameter="{Binding .}"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </StackLayout>
+                               
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
         </StackLayout>
-    </ContentPage.Content>
+   </ContentPage.Content>
 </ContentPage>
