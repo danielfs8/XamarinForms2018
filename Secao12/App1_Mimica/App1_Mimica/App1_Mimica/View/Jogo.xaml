@@ -5,18 +5,22 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <Label Text="Grupo"/>
-                <Label Text="Palavra - Pontuação (1)" HorizontalOptions="Start"/>
-                <Label Text="************" HorizontalOptions="CenterAndExpand"/>
-                <Button Text="Mostrar"/>
+                <Label Text="{Binding NomeGrupo}"/>
+                <Label Text="{Binding PalavraPontuacao}" HorizontalOptions="Start"/>
+                <Label Text="{Binding Palavra}" HorizontalOptions="CenterAndExpand"/>
+                <Button Text="Mostrar" IsVisible="{Binding IsVisibleBtnMostrar}" Command="{Binding MostrarPalavra}"/>
             </StackLayout>
-            <StackLayout>
-                <Label Text="200" HorizontalOptions="CenterAndExpand" FontSize="100"/>
+            <StackLayout IsVisible="{Binding IsVisibleContainerContagem}">
+                <Label Text="{Binding TextoContagem}" HorizontalOptions="CenterAndExpand" FontSize="100"/>
                 <Label Text="seg" HorizontalOptions="CenterAndExpand"/>
+            
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Acertou" BackgroundColor="LightGreen" HorizontalOptions="Start" Command="{Binding Acertou}"/>
+                    <Button Text="Errou" BackgroundColor="OrangeRed" HorizontalOptions="End" Command="{Binding Errou}"/>
+                </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Acertou" BackgroundColor="LightGreen" HorizontalOptions="Start"/>
-                <Button Text="Errou" BackgroundColor="OrangeRed" HorizontalOptions="End"/>
+            <StackLayout IsVisible="{Binding IsVisibleContainerIniciar}">
+                <Button Text="Iniciar" Command="{Binding Iniciar}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
