@@ -9,6 +9,7 @@
                 <Label Text="Config"/>
             </StackLayout>
             <StackLayout Padding="20">
+                <Label Text="{Binding MsgErro}" TextColor="Red"/>
                 <Label Text="Nome Grupo 1" />
                 <Entry Placeholder="(Opcional)" Text="{Binding Jogo.Grupo1.Nome}"/>
                 <Label Text="Nome Grupo 2" />
