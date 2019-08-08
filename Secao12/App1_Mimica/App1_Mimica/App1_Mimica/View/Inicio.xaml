@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1_Mimica.View.Inicio">
+             x:Class="App1_Mimica.View.Inicio"
+             xmlns:cab="clr-namespace:App1_Mimica.View.Util"
+             >
+    
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal" BackgroundColor="Gray">
+           <!-- <StackLayout Orientation="Horizontal" BackgroundColor="Gray">
                 <Label Text="Jogo de Mimica" FontAttributes="Bold"/>
                 <Label Text="Config"/>
-            </StackLayout>
-            <StackLayout Padding="20">
+            </StackLayout>-->
+
+
+            <StackLayout Padding="20" Spacing="0" Style="{StaticResource Container}">
+                <cab:Cabecalho/>
+                
                 <Label Text="{Binding MsgErro}" TextColor="Red"/>
                 <Label Text="Nome Grupo 1" />
                 <Entry Placeholder="(Opcional)" Text="{Binding Jogo.Grupo1.Nome}"/>

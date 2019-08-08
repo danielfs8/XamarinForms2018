@@ -14,6 +14,8 @@ namespace App1_Mimica.ViewModel
 
         public string NomeGrupo { get; set; }
 
+        public string NumeroGrupo { get; set; }
+
         private string _Palavra;
         public string Palavra { get { return _Palavra; } set { _Palavra = value; OnPropertyChanged("Palavra");  } }
 
@@ -45,6 +47,15 @@ namespace App1_Mimica.ViewModel
         {
             Grupo = grupo;
             NomeGrupo = grupo.Nome;
+
+            if (grupo == Armazenamento.BD.Jogo.Grupo1)
+            {
+                NumeroGrupo = "Grupo 1 ";
+            }
+            else
+            {
+                NumeroGrupo = "Grupo 2 ";
+            }
 
             IsVisibleContainerContagem = false;
             IsVisibleContainerIniciar = false;

@@ -3,6 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1_Mimica.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <!-- Cabeçalho-->
+            <Style TargetType="StackLayout" x:Key="Cabecalho">
+                <Setter Property="BackgroundColor" Value="Orange"/>
+                <Setter Property="HeightRequest" Value="40"/>
+            </Style>
+            
+            <Style TargetType="Label" x:Key="CabecalhoFonte">
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            </Style>
+            
+            <!-- Label -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Orange"/>
+            </Style>
+            
+            <!-- Container-->
+            <Style TargetType="StackLayout" x:Key="Container">
+                <Setter Property="BackgroundColor" Value="Yellow"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
 
+            </Style>
+
+        </ResourceDictionary>
+        
+        
     </Application.Resources>
 </Application>
