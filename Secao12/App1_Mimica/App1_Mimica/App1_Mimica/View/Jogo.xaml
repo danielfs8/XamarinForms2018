@@ -13,17 +13,30 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    
-                    <Label Text="{Binding NumeroGrupo}"/>
-                    <Label Text="{Binding NomeGrupo}"/>
+            <conv:Cabecalho/>
+           
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Label Text="{Binding NumeroGrupo}"  Style="{StaticResource LblGrupo}" />
+                    <Label Text="{Binding NomeGrupo}" Style="{StaticResource LblGrupo}" />
                 </StackLayout>
-                
-                <Label Text="{Binding PalavraPontuacao, Converter={StaticResource convPontuacao}}" HorizontalOptions="Start"/>
-                <Label Text="{Binding Palavra}" HorizontalOptions="CenterAndExpand"/>
-                <Button Text="Mostrar" IsVisible="{Binding IsVisibleBtnMostrar}" Command="{Binding MostrarPalavra}"/>
+                <Frame Style="{StaticResource Frame}"  >
+                    <StackLayout>
+                        <Frame CornerRadius="90" BackgroundColor="Azure" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50" HasShadow="True">
+                            <StackLayout>
+                                <Label Text="{Binding JogoSomaPonto}" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  />
+                                <Label Text="Total" FontSize="15" HorizontalOptions="Center" VerticalOptions="Center"  />
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="{Binding Palavra}" HorizontalOptions="CenterAndExpand" Style="{StaticResource LblPalavra}" />
+                        <Label Text="{Binding PalavraPontuacao, Converter={StaticResource convPontuacao}}" HorizontalOptions="Center" Style="{StaticResource LblPontuaca}"/>
+                        <Button Text="Mostrar" IsVisible="{Binding IsVisibleBtnMostrar}" Command="{Binding MostrarPalavra}" HorizontalOptions="Center" Style="{StaticResource BtnMostrar}"/>
+
+                    </StackLayout>
+                </Frame>
             </StackLayout>
+            
             <StackLayout IsVisible="{Binding IsVisibleContainerContagem}">
                 <Label Text="{Binding TextoContagem}" HorizontalOptions="CenterAndExpand" FontSize="100"/>
                 <Label Text="seg" HorizontalOptions="CenterAndExpand"/>
@@ -34,7 +47,7 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout IsVisible="{Binding IsVisibleContainerIniciar}">
-                <Button Text="Iniciar" Command="{Binding Iniciar}" />
+                <Button Text="Iniciar" Command="{Binding Iniciar}" Style="{StaticResource BtnMostrar}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -16,6 +16,9 @@ namespace App1_Mimica.ViewModel
 
         public string NumeroGrupo { get; set; }
 
+        private short _JogoSomaPonto;
+        public short JogoSomaPonto { get { return _JogoSomaPonto; } set { _JogoSomaPonto = value; OnPropertyChanged("JogoSomaPonto"); } }
+
         private string _Palavra;
         public string Palavra { get { return _Palavra; } set { _Palavra = value; OnPropertyChanged("Palavra");  } }
 
@@ -50,11 +53,27 @@ namespace App1_Mimica.ViewModel
 
             if (grupo == Armazenamento.BD.Jogo.Grupo1)
             {
-                NumeroGrupo = "Grupo 1 ";
+                if (BD.Jogo.Grupo1.Nome != null)
+                {
+                    NumeroGrupo = "Grupo 1: ";
+                }
+                else
+                {
+                    NumeroGrupo = "Grupo 1 ";
+                }
+                JogoSomaPonto = BD.Jogo.Grupo1.Pontuacao;
             }
             else
             {
-                NumeroGrupo = "Grupo 2 ";
+                if(BD.Jogo.Grupo2.Nome != null)
+                {
+                    NumeroGrupo = "Grupo 2: ";
+                }
+                else
+                {
+                    NumeroGrupo = "Grupo 2 ";
+                }
+                JogoSomaPonto = BD.Jogo.Grupo2.Pontuacao;
             }
 
             IsVisibleContainerContagem = false;
@@ -67,6 +86,7 @@ namespace App1_Mimica.ViewModel
             Acertou = new Command(AcertouAction);
             Errou = new Command(ErrouAction);
             Iniciar = new Command(IniciarAction);
+           
         }
 
       
@@ -84,7 +104,7 @@ namespace App1_Mimica.ViewModel
 
                 int Niv = rd.Next(0,2);
                 int indice = rd.Next(0, Armazenamento.BD.Palavras[Niv].Length);
-                Palavra = Armazenamento.BD.Palavras[Niv][indice];
+                Palavra = Armazenamento.BD.Palavras[Niv][indice].ToUpper();
                 PalavraPontuacao = (byte)((Niv == 0) ? 1 : (Niv == 1) ? 3 : 5);
 
 
@@ -94,7 +114,7 @@ namespace App1_Mimica.ViewModel
                 //Fac.
                 Random rd = new Random();
                 int indice = rd.Next(0, Armazenamento.BD.Palavras[NumNivel -1].Length);
-                Palavra = Armazenamento.BD.Palavras[NumNivel - 1][indice];
+                Palavra = Armazenamento.BD.Palavras[NumNivel - 1][indice].ToUpper(); ;
                 PalavraPontuacao = 1;
             }
             if (NumNivel == 2)
@@ -102,7 +122,7 @@ namespace App1_Mimica.ViewModel
                 //Med.
                 Random rd = new Random();
                 int indice = rd.Next(0, Armazenamento.BD.Palavras[NumNivel - 1].Length);
-                Palavra = Armazenamento.BD.Palavras[NumNivel - 1][indice];
+                Palavra = Armazenamento.BD.Palavras[NumNivel - 1][indice].ToUpper(); ;
                 PalavraPontuacao = 3;
 
             }
@@ -111,7 +131,7 @@ namespace App1_Mimica.ViewModel
                 //Dif.
                 Random rd = new Random();
                 int indice = rd.Next(0, Armazenamento.BD.Palavras[NumNivel - 1].Length);
-                Palavra = Armazenamento.BD.Palavras[NumNivel - 1][indice];
+                Palavra = Armazenamento.BD.Palavras[NumNivel - 1][indice].ToUpper(); ;
                 PalavraPontuacao = 5;
             }
 
@@ -149,6 +169,7 @@ namespace App1_Mimica.ViewModel
         private void AcertouAction()
         {
             Grupo.Pontuacao += PalavraPontuacao;
+           
 
             GoProximoGrupo();
 

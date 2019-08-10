@@ -16,11 +16,11 @@ namespace App1_Mimica.View.Util
            if(((short)value) == 0)
             {
                 
-                return "Pontuacao: ";
+                return "";
             }
             else
             {
-                return "Pontuacao: " + value;
+                return "+" + value;
             }
             
         }
