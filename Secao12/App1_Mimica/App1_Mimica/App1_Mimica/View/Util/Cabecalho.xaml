@@ -3,8 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1_Mimica.View.Util.Cabecalho">
   <ContentView.Content>
-        <StackLayout Style="{StaticResource Cabecalho}">
+        <StackLayout Style="{StaticResource Cabecalho}" Orientation="Horizontal">
             <Label Text="Jodo de Mímica" Style="{StaticResource CabecalhoFonte}"/>
+            <Label Text="Sair" Style="{StaticResource CabecalhoSairFonte}" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SairEvento"/>
+                </Label.GestureRecognizers>
+            </Label>
       </StackLayout>
   </ContentView.Content>
 </ContentView>

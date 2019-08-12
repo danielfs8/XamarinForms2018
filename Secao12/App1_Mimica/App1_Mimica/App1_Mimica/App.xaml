@@ -8,6 +8,7 @@
             <Style TargetType="StackLayout" x:Key="Cabecalho">
                 <Setter Property="BackgroundColor" Value="Orange"/>
                 <Setter Property="HeightRequest" Value="40"/>
+                
             </Style>
             
             <Style TargetType="Label" x:Key="CabecalhoFonte">
@@ -15,9 +16,20 @@
                 <Setter Property="TextColor" Value="White"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
             </Style>
-            
-            
+
+            <Style TargetType="Label" x:Key="CabecalhoSairFonte">
+                
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Margin" Value="0,0,10,0"/>
+            </Style>
+
+           
+
+
             <!-- Label -->
             <Style TargetType="Label" BaseResourceKey="LblPadrao">
                 <Setter Property="TextColor" Value="Orange"/>
@@ -42,6 +54,12 @@
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
                 <Setter Property="Margin" Value="15"/>
+            </Style>
+            <Style TargetType="Label" x:Key="LblNivel" BasedOn="LblPadrao">
+                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+                <Setter Property="Margin" Value="2
+                        0,0,0,0"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
 
 

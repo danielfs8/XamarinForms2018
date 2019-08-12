@@ -6,15 +6,15 @@
              >
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="0">
            <!-- <StackLayout Orientation="Horizontal" BackgroundColor="Gray">
                 <Label Text="Jogo de Mimica" FontAttributes="Bold"/>
                 <Label Text="Config"/>
             </StackLayout>-->
 
-
+            <cab:Cabecalho/>
             <StackLayout Padding="20" Spacing="0" Style="{StaticResource Container}">
-                <cab:Cabecalho/>
+                
                 
                 <Label Text="{Binding MsgErro}" TextColor="Red"/>
                 <Label Text="Nome Grupo 1" />

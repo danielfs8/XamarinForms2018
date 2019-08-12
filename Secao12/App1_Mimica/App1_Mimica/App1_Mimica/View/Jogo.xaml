@@ -21,6 +21,7 @@
                     <Label Text="{Binding NumeroGrupo}"  Style="{StaticResource LblGrupo}" />
                     <Label Text="{Binding NomeGrupo}" Style="{StaticResource LblGrupo}" />
                 </StackLayout>
+                <Label Text="{Binding Nivel}" Style="{StaticResource LblNivel}" />
                 <Frame Style="{StaticResource Frame}"  >
                     <StackLayout>
                         <Frame CornerRadius="90" BackgroundColor="Azure" HorizontalOptions="Center" HeightRequest="50" WidthRequest="50" HasShadow="True">
@@ -41,7 +42,7 @@
                 <Label Text="{Binding TextoContagem}" HorizontalOptions="CenterAndExpand" FontSize="100"/>
                 <Label Text="seg" HorizontalOptions="CenterAndExpand"/>
             
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Button Text="Acertou" BackgroundColor="LightGreen" HorizontalOptions="Start" Command="{Binding Acertou}"/>
                     <Button Text="Errou" BackgroundColor="OrangeRed" HorizontalOptions="End" Command="{Binding Errou}"/>
                 </StackLayout>

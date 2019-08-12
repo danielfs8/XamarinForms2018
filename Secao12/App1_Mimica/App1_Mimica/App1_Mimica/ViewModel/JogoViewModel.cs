@@ -16,6 +16,9 @@ namespace App1_Mimica.ViewModel
 
         public string NumeroGrupo { get; set; }
 
+        private string _Nivel;
+        public string Nivel { get { return _Nivel; } set { _Nivel = value; OnPropertyChanged("Nivel"); } }
+
         private short _JogoSomaPonto;
         public short JogoSomaPonto { get { return _JogoSomaPonto; } set { _JogoSomaPonto = value; OnPropertyChanged("JogoSomaPonto"); } }
 
@@ -43,9 +46,10 @@ namespace App1_Mimica.ViewModel
         public Command Acertou { get; set; }
         public Command Errou { get; set; }
         public Command Iniciar { get; set; }
+
+        //Declaração utilizada por dois metodos
         
 
-   
         public JogoViewModel(Grupo grupo)
         {
             Grupo = grupo;
@@ -76,6 +80,30 @@ namespace App1_Mimica.ViewModel
                 JogoSomaPonto = BD.Jogo.Grupo2.Pontuacao;
             }
 
+            //Apresentar Nivel de jogo
+
+
+            var NumNivel = Armazenamento.BD.Jogo.NivelNumerico;
+            switch (NumNivel)
+            { 
+                case 0:
+                    Nivel = "Nivel: Aleatório";
+                    break;
+                case 1:
+                    Nivel = "Nivel: Fácil";
+                    break;
+                case 2:
+                    Nivel = "Nivel: Médio";
+                    break;
+                case 3:
+                    Nivel = "Nivel: Difícil";
+                    break;
+            }
+
+
+
+
+
             IsVisibleContainerContagem = false;
             IsVisibleContainerIniciar = false;
             IsVisibleBtnMostrar = true;
@@ -96,17 +124,19 @@ namespace App1_Mimica.ViewModel
             //PalavraPontuacao = 3;
             //Palavra = "Correr";
 
+
+            
             var NumNivel = Armazenamento.BD.Jogo.NivelNumerico;
-            if(NumNivel == 0)
+            if (NumNivel == 0)
             {
                 //Aleatório
                 Random rd = new Random();
 
-                int Niv = rd.Next(0,2);
+                int Niv = rd.Next(0,3);
                 int indice = rd.Next(0, Armazenamento.BD.Palavras[Niv].Length);
                 Palavra = Armazenamento.BD.Palavras[Niv][indice].ToUpper();
                 PalavraPontuacao = (byte)((Niv == 0) ? 1 : (Niv == 1) ? 3 : 5);
-
+                
 
             }
             if (NumNivel == 1)
@@ -116,6 +146,7 @@ namespace App1_Mimica.ViewModel
                 int indice = rd.Next(0, Armazenamento.BD.Palavras[NumNivel -1].Length);
                 Palavra = Armazenamento.BD.Palavras[NumNivel - 1][indice].ToUpper(); ;
                 PalavraPontuacao = 1;
+                
             }
             if (NumNivel == 2)
             {
@@ -124,6 +155,7 @@ namespace App1_Mimica.ViewModel
                 int indice = rd.Next(0, Armazenamento.BD.Palavras[NumNivel - 1].Length);
                 Palavra = Armazenamento.BD.Palavras[NumNivel - 1][indice].ToUpper(); ;
                 PalavraPontuacao = 3;
+               
 
             }
             if (NumNivel == 3)
@@ -133,6 +165,7 @@ namespace App1_Mimica.ViewModel
                 int indice = rd.Next(0, Armazenamento.BD.Palavras[NumNivel - 1].Length);
                 Palavra = Armazenamento.BD.Palavras[NumNivel - 1][indice].ToUpper(); ;
                 PalavraPontuacao = 5;
+                
             }
 
 
@@ -150,6 +183,8 @@ namespace App1_Mimica.ViewModel
             //TODO - Quando o tempo terminar parar a contagem.,
 
             int i = BD.Jogo.TempoPalavra;
+            TextoContagem = BD.Jogo.TempoPalavra.ToString();
+            i--;
 
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
             {
